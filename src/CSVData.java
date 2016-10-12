@@ -25,12 +25,12 @@ public class CSVData {
 		return null;
 	}
 
-	public int getRow(int r) {
-		return r;
+	public static double[] getRow(double[][] data, int r) {
+		return null;
 	}
 
-	public int getColumn(int c) {
-		return c;
+	public static double[] getColumn(double[][] data, int c) {
+		return null;
 	}
 
 	public double[][] getMultipleRows(double[][] data, int startRow, int endRow) {
