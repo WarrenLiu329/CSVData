@@ -33,7 +33,7 @@ public class CSVData {
 	 */
 
 	public double[] getRow(int r) {
-		return null;
+		return this.data[r];
 	}
 
 	/***
@@ -42,18 +42,28 @@ public class CSVData {
 	 * @param Index
 	 * @return the column we r returning
 	 */
-	public double[] getColumn(int Index) {
-		return null;
+	public double[] getColumn(int colIndex) {
+		double[] cols = new double[this.data.length];
+		for (int r = 0; r < this.data.length; r++){
+			cols[r] = this.data[r][colIndex];
+		}
+		
+		return cols;
 	}
 
 	/***
-	 * reuturn the index of the column based on name
+	 * return the index of the column based on name
 	 * 
 	 * @param name
 	 * @return the index of the returned name
 	 */
-	public double[] getColumn(String name) {
-		return null;
+	public int getColumn(String name) {
+		for (int i = 0; i < this.columnHeaders.length; i++){
+			if (this.columnHeaders[i].equals(name)){
+				return i;
+			}
+		}
+		return 0;
 	}
 
 	/***
@@ -73,7 +83,8 @@ public class CSVData {
 	 * @return the set of columns user wants
 	 */
 	public double[][] getMultipleColumns(String[] columnNames) {
-		return null;
+		return data;
+	
 	}
 
 	/***
