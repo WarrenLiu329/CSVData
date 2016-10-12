@@ -25,35 +25,103 @@ public class CSVData {
 		return null;
 	}
 
-	public static double[] getRow(double[][] data, int r) {
+	/****
+	 * returns a row
+	 * 
+	 * @param r
+	 * @return the row we r returning
+	 */
+
+	public double[] getRow(int r) {
 		return null;
 	}
 
-	public static double[] getColumn(double[][] data, int c) {
+	/***
+	 * returns a column
+	 * 
+	 * @param Index
+	 * @return the column we r returning
+	 */
+	public double[] getColumn(int Index) {
 		return null;
 	}
 
-	public double[][] getMultipleRows(double[][] data, int startRow, int endRow) {
+	/***
+	 * reuturn the index of the column based on name
+	 * 
+	 * @param name
+	 * @return the index of the returned name
+	 */
+	public double[] getColumn(String name) {
 		return null;
 	}
 
-	public double[][] getMultipleColumns(double[][] data, int startColumn, int endColumn) {
+	/***
+	 * returns multiple rows
+	 * 
+	 * @param rowIndexes
+	 * @return the rows indicated
+	 */
+	public double[][] getMultipleRows(int[] rowIndexes) {
 		return null;
 	}
 
+	/****
+	 * returns multiple columns
+	 * 
+	 * @param columnNames
+	 * @return the set of columns user wants
+	 */
+	public double[][] getMultipleColumns(String[] columnNames) {
+		return null;
+	}
+
+	/***
+	 * returns the data
+	 * 
+	 * @return the current data
+	 */
 	public double[][] getData() {
 		return this.data;
 	}
 
+	/***
+	 * returns the list of column names
+	 * 
+	 * @return the current column names
+	 */
 	public String[] getColumnTitles() {
 		return this.columnHeaders;
 	}
 
-	public static void setColumn(double[][] data, int c, double[] values) {
+	/***
+	 * sets the new data value to a spot on the 2d array
+	 * 
+	 * @param rowIndex
+	 * @param colIndex
+	 * @param newValue
+	 */
+	public void setValue(int rowIndex, int colIndex, double newValue) {
 
 	}
 
-	public static void detRow(double[][] data, int r, double[] values) {
+	/***
+	 * sets the name of a column
+	 * 
+	 * @param columnIndex
+	 * @param name
+	 */
+	public void setColumnName(int columnIndex, String name) {
+
+	}
+
+	/***
+	 * formats the data into a readable file
+	 * 
+	 * @param fileName
+	 */
+
+	public void saveToFile(String fileName) {
 
 	}
 
