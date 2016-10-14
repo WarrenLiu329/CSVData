@@ -11,18 +11,13 @@ import java.util.Scanner;
 public class CSVData {
 	private String[] columnHeaders;
 	private double[][] data;
-	private String filePathToCSV;
-	private int numRows;
 
 	public CSVData(String filepath, String[] columnNames, int startRow) {
-		this.filePathToCSV = filepath;
-
 		String dataString = readFileAsString(filepath);
 		String[] lines = dataString.split("\n");
 
 		// number of data points
 		int n = lines.length - startRow;
-		this.numRows = n;
 		int numColumns = columnNames.length;
 
 		// create storage for column names
@@ -40,6 +35,8 @@ public class CSVData {
 				data[i][j] = val;
 			}
 		}
+		
+		System.out.println(data.length + " " + data[0].length);
 	}
 
 	public static CSVData readCSVFile(String filePath, int numLinesToIgnore, String[] columnNames) {
@@ -52,7 +49,7 @@ public class CSVData {
 		try (Scanner scanner = new Scanner(new File(filepath))) {
 			while (scanner.hasNext()) {
 				String line = scanner.nextLine();
-				output.append(line + System.getProperty("line.sperator"));
+				output.append(line + System.getProperty("line.separator"));
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -124,6 +121,7 @@ public class CSVData {
 		double[][] rowValues = new double[rowIndexes.length][data[0].length];
 		for (int i = 0; i < rowIndexes.length; i++) {
 			rowValues[i] = getRow(rowIndexes[i]);
+			System.out.println("Row: " + i);
 		}
 		return rowValues;
 	}
@@ -141,6 +139,7 @@ public class CSVData {
 		for (int i = 0; i < columnNames.length; i++) {
 			index = getColumnIndex(columnNames[i]);
 			newData = getColumn(index);
+			System.out.println("Columns: " + i);
 			for (int row = 0; row < data.length; row++) {
 				colValues[row][i] = newData[row];
 			}
@@ -198,5 +197,7 @@ public class CSVData {
 	public void saveToFile(String fileName) {
 
 	}
+	
+	
 
 }
