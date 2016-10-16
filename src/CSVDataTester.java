@@ -1,3 +1,4 @@
+import java.util.Arrays;
 
 public class CSVDataTester {
 
@@ -6,8 +7,8 @@ public class CSVDataTester {
 		
 		String[] columnNames = {"time (ms)", "gyro-x", "gyro-y", "gyro-z"};
 		CSVData data = new CSVData(filePath, columnNames, 1);
+		System.out.println(Arrays.toString(data.getColumn(3)));
 		
-		print(data.getData());
 	}
 	
 	public static void print(double[][] data){
